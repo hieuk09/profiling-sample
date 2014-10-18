@@ -1,9 +1,6 @@
-== README
-
 PROFILING SAMPLE
 =======
-A sample project to demo several ways to profile a rails application
-SLIDE: [http://slides.com/hieunguyen/profiling-ruby/](http://slides.com/hieunguyen/profiling-ruby#/)
+A sample project to demo several ways to profile a rails application for [http://slides.com/hieunguyen/profiling-ruby/](http://slides.com/hieunguyen/profiling-ruby#/)
 
 SETUP
 ======
@@ -44,8 +41,8 @@ rake profiling:benchmark:all
 Rails Instrumential
 ---
 
-Goto [localhost:3000/books](localhost:3000/books).
-Then goto [localhost:3000/page_requests](localhost:3000/page_requests).
+Goto [localhost:3000/books](http://localhost:3000/books).
+Then goto [localhost:3000/page_requests](http://localhost:3000/page_requests).
 You should be able to see the request and the time which needed to complete that request.
 You can try adding parameter `speed` to books page with 2 options: `slow` or `fast` and see the different.
 

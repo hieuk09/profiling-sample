@@ -46,7 +46,7 @@ Then goto [localhost:3000/page_requests](http://localhost:3000/page_requests).
 You should be able to see the request and the time which needed to complete that request.
 You can try adding parameter `speed` to books page with 2 options: `slow` or `fast` and see the different.
 
-NewRelic
+[NewRelic](newrelic.com)
 ---
-You can request the books page, then goto [new relic page](localhost:3000/newrelic) and see the information there.
+You can request the books page, then goto [new relic page](http://localhost:3000/newrelic) and see the information there.
 

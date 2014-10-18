@@ -1,0 +1,31 @@
+<h1>Listing page_requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>View duration</th>
+      <th>Db duration</th>
+      <th>Page duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_requests.each do |page_request| %>
+      <tr>
+        <td><%= page_request.path %></td>
+        <td><%= page_request.view_duration %></td>
+        <td><%= page_request.db_duration %></td>
+        <td><%= page_request.page_duration %></td>
+        <td><%= link_to 'Show', page_request %></td>
+        <td><%= link_to 'Edit', edit_page_request_path(page_request) %></td>
+        <td><%= link_to 'Destroy', page_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page request', new_page_request_path %>

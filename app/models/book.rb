@@ -19,7 +19,7 @@ class Book < ActiveRecord::Base
   end
 
   def self.stack_profile(type)
-    output = "tmp/stackprof-cpu-#{run_method}.dump"
+    output = "tmp/stackprof-cpu-#{type}.dump"
     StackProf.run(mode: :cpu, out: output, interval: 10) do
       send(run_method(type))
     end
@@ -39,7 +39,7 @@ class Book < ActiveRecord::Base
 
   private
 
-  def self.run_method(type)
-    "category_names_#{type}"
+  def self.run_method(method_type)
+    "category_names_#{method_type}"
   end
 end

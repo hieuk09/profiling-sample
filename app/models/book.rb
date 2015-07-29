@@ -1,5 +1,8 @@
 class Book < ActiveRecord::Base
   belongs_to :category
+  belongs_to :author
+  has_many :book_users
+  has_many :users, through: :book_users
 
   def category_name
     category.try(:name)

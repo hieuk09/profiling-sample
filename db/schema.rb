@@ -11,31 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018063405) do
+ActiveRecord::Schema.define(version: 20150728094358) do
 
-  create_table "books", force: true do |t|
+  create_table "authors", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "book_users", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "book_users", ["book_id"], name: "index_book_users_on_book_id"
+  add_index "book_users", ["user_id"], name: "index_book_users_on_user_id"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "name",        limit: 255
     t.text     "description"
-    t.string   "author"
-    t.string   "publisher"
+    t.string   "publisher",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.integer  "author_id"
   end
 
-  create_table "categories", force: true do |t|
-    t.string   "name"
+  add_index "books", ["author_id"], name: "index_books_on_author_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "page_requests", force: true do |t|
-    t.string   "path"
+  create_table "page_requests", force: :cascade do |t|
+    t.string   "path",          limit: 255
     t.float    "view_duration"
     t.float    "db_duration"
     t.float    "page_duration"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

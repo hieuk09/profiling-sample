@@ -21,6 +21,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'stackprof'
 gem 'ruby-prof'
 gem 'newrelic_rpm'
+gem 'benchmark-ips'
 
 group :development, :test do
   gem 'rspec-rails'
